@@ -1,8 +1,8 @@
-# Your startup name here
+# SongSwipe
 
 [My Notes](notes.md)
 
-A brief description of the application here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+A brief description of the application here. 
 
 
 > [!NOTE]
@@ -26,37 +26,83 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 ### Elevator pitch
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+SongSwipe is is a Tinder-style web app where users swipe through songs from a public music API, save the ones they like, and see trending tracks update in real time.
 
 ### Design
 
-![Design image](placeholder.png)
+![SongSwipe Sketch](https://github.com/user-attachments/assets/e7af4ac0-3bd7-4cad-8786-0153f02cbe3d)
+![SongSwipe Sketch (1)](https://github.com/user-attachments/assets/7da8e541-4661-4b5a-b169-7d7215766d44)
+![SongSwipe Sketch (2)](https://github.com/user-attachments/assets/d5ccec25-4f9d-424c-9585-e2a435bdbc61)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The application consists of four main views: a login/registration page, the main swipe interface, a trending songs page, and a personal playlist view. Users will start by creating an account or logging in, then be taken to the swipe deck where they can discover new music by swiping through song cards. Each card displays album art, song title, and plays a ten second snippet fetched from the iTunes Search API. Users can swipe right to save songs to their personal playlist or swipe left to skip. A real-time trending section shows which songs are popular across all users.
 
 ```mermaid
 sequenceDiagram
-    actor You
-    actor Website
-    You->>Website: Replace this with your design
+    actor User
+    participant App
+    participant iTunes API
+    participant WebSocket Server
+    
+    User->>App: Login/Register
+    App->>iTunes API: Fetch songs
+    iTunes API->>App: Return song data
+    App->>User: Display swipe deck
+    User->>App: Swipe right (like)
+    App->>WebSocket Server: Update trending count
+    WebSocket Server->>App: Broadcast trending update
+    App->>User: Show updated trending list
 ```
 
 ### Key features
 
-- Describe your key feature
-- Describe your key feature
-- Describe your key feature
+- **Swipe Interface**: Swipe right to save a song, swipe left to skip.
+- **Personal Playlist**: Your liked songs are saved to your profile.
+- **Real-Time Trending**: Watch which tracks are trending live across users via WebSockets.
+- **Third-Party Music API**: Songs and metadata (title, artist, album art) fetched from the iTunes Search API.
+- **Authentication**: Register, login, and logout to personalize your experience.
 
 ### Technologies
 
 I am going to use the required technologies in the following ways.
 
-- **HTML** - Description here
-- **CSS** - Description here
-- **React** - Description here
-- **Service** - Description here
-- **DB/Login** - Description here
-- **WebSocket** - Description here
+### HTML
+- Use semantic HTML to structure three main views: login/register, swipe deck, and saved playlist.
+- Provide accessible buttons and labels so it works well on different devices
+  
+### CSS
+- Responsive mobile-first design.
+- Smooth swipe animations and card transitions.
+- Color scheme inspired by modern music apps.
+
+### React
+- Componentized UI:
+  - `LoginForm` (register/login)
+  - `SwipeDeck` (the stack of song cards)
+  - `Playlist` (list of saved songs)
+  - `Trending` (real-time trending list)
+- React Router to navigate between login, swipe deck, and playlist.
+
+### Backend Service (Node/Express)
+- **Endpoints**:
+  - `POST /register` – Create new user
+  - `POST /login` – Authenticate user
+  - `GET /songs` – Fetch songs from third-party API and deliver to client
+  - `POST /like` – Save a liked song for a user
+  - `GET /playlist` – Retrieve user’s saved songs
+- Calls out to iTunes Search API
+- Secure token-based authentication
+
+### Database
+- Store:
+  - User credentials (hashed passwords)
+  - User’s liked songs (song ID, title, artist, album art URL)
+- Hosted on AWS.
+
+### WebSocket
+- Push real-time trending data to all connected clients:
+  - When a user swipes right, increment trending count for that song.
+  - Broadcast updated trending list to all clients instantly.
+
 
 ## 🚀 AWS deliverable
 
