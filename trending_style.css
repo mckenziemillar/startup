@@ -16,6 +16,7 @@
 }
 
 .nav-button {
+    text-decoration: none;
     background: rgba(255, 255, 255, 0.1);
     border: none;
     color: white;
