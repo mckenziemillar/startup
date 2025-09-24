@@ -29,3 +29,29 @@
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
+
+body {
+    background-color: #1c1c1c;
+    font-family: Arial, sans-serif;
+    color: #fff;
+  }
+
+.nav-container a.nav-button {
+  text-decoration: none; 
+  color: inherit;        
+}  
+
+.nav-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Section Title */
+.section-title {
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 15px;
+    border: 1px solid #fff;
+    font-size: 1.5rem;
+  }
