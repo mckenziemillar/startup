@@ -40,3 +40,18 @@ body {
   text-decoration: none; 
   color: inherit;        
 }  
+
+.nav-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Section Title */
+.section-title {
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 15px;
+    border: 1px solid #fff;
+    font-size: 1.5rem;
+  }
