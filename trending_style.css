@@ -31,14 +31,23 @@
 }
 
 body {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    font-family: Arial, sans-serif;
-    color: #fff;
-  }
+  background-color: #000000;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  /* Center the content area within a standard screen size */
+  max-width: 800px;
+  margin: 0 auto;
+}
 
 .nav-container a.nav-button {
+  background-color: #000000;
   text-decoration: none; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10px;
   color: inherit;        
+  border-bottom: 2px solid #fff;
 }  
 
 .nav-button:hover {
