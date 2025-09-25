@@ -74,3 +74,19 @@ body {
     background-color: #a0a0a0; /* Light gray background */
     border: 1px solid #a0a0a0;
 }
+
+.nav-button:hover {
+  background-color: #f0f0f0;
+}
+
+.section-title {
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  margin: 20px 0 0 0; 
+  padding: 15px 10px;
+  border: 2px solid #fff; 
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
