@@ -56,3 +56,8 @@ body {
     border: 1px solid #fff;
     font-size: 1.5rem;
   }
+
+.song-item img {
+    width: 50px; /* Adjust this value to your desired size */
+    height: 50px; /* Adjust this value to your desired size */
+}
