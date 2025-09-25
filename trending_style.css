@@ -67,3 +67,10 @@ body {
     border: 1px solid #fff;
     font-size: 1.5rem;
   }
+
+.nav-container a.nav-button {
+    text-decoration: none;
+    color: #000;
+    background-color: #a0a0a0; /* Light gray background */
+    border: 1px solid #a0a0a0;
+}
