@@ -38,3 +38,21 @@ body {
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
+
+.current-user-box {
+    margin-left: auto; /* pushes it to the far right */
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 14px;
+    color: white;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .username {
+    font-weight: bold;
+  }
