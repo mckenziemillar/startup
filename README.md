@@ -114,15 +114,15 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **HTML pages** - I did not complete this part of the deliverable.
-- [ ] **Proper HTML element usage** - I did not complete this part of the deliverable.
-- [ ] **Links** - I did not complete this part of the deliverable.
-- [ ] **Text** - I did not complete this part of the deliverable.
-- [ ] **3rd party API placeholder** - I did not complete this part of the deliverable.
-- [ ] **Images** - I did not complete this part of the deliverable.
-- [ ] **Login placeholder** - I did not complete this part of the deliverable.
-- [ ] **DB data placeholder** - I did not complete this part of the deliverable.
-- [ ] **WebSocket placeholder** - I did not complete this part of the deliverable.
+- [x] **HTML pages** - Four HTML pages: index.html (login), deck.html (swipe interface), playlist.html (saved songs), and trending.html (trending songs).
+- [x] **Proper HTML element usage** - Used semantic HTML with proper head, body, nav, form, and content structure across all pages.
+- [x] **Links** - Navigation buttons link between all four pages (Home/Swipe Deck, My Playlist, Trending). GitHub repository link included in footer of relevant pages.
+- [x] **Text** - Song titles, artist names, usernames, and page headings display text content throughout the application.
+- [x] **3rd party API placeholder** - Album artwork images serve as placeholders for future iTunes Search API integration. The deck page displays album art that will eventually be fetched from the API.
+- [x] **Images** - Album cover images displayed on deck.html, playlist.html, and trending.html (Abbey Road and Dark Side of the Moon covers).
+- [x] **Login placeholder** - Login form on index.html with username and password input fields, login button, and sign-up link.
+- [x] **DB data placeholder** - Playlist and trending pages display hardcoded song lists (Come Together, Money) that will eventually be stored in and retrieved from the database.
+- [x] **WebSocket placeholder** - Trending page structure is in place to display real-time trending songs that will be updated via WebSocket connections.
 
 ## 🚀 CSS deliverable
 
