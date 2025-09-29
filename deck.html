@@ -3,7 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Player</title>
 
-    <link rel="stylesheet" href="playlist_style.css">
+    <link rel="stylesheet" href="index_style.css">
 </head>
 
 </head>
@@ -15,29 +15,28 @@
         <a href="trending.html" class="nav-button">Trending</a>
     </div>
 
-    <h1 class="section-title">My Saved Songs</h1>
-
-    <div class="song-list">
-        <div class="song-item">
-        <img src="images/abbyroad.avif" alt="Come Together">
-        <div class="song-info">
-            <p class="song-title">Come Together</p>
-            <p class="song-artist">The Beatles</p>
-        </div>
+    <div class="main-content">
+        <div class="album-container">
+            <div class="album-frame">
+                <img src="https://upload.wikimedia.org/wikipedia/en/4/42/Beatles_-_Abbey_Road.jpg" 
+                     alt="Abbey Road Album Cover" 
+                     class="album-art">
+            </div>
         </div>
 
-        <div class="song-item">
-        <img src="images/darkside.png" alt="Money">
         <div class="song-info">
-            <p class="song-title">Money</p>
-            <p class="song-artist">Pink Floyd</p>
+            <h2 class="song-title">Come Together</h2>
+            <h3 class="artist-name">The Beatles</h3>
         </div>
+
+        <div class="controls">
+            <button class="control-button skip-button">← Skip</button>
+            <button class="control-button save-button">Save →</button>
         </div>
     </div>
 
     <a href="https://github.com/mckenziemillar/startup.git" class="github-link" target="_blank">
         GitHub Repository
-    </a>     
-
+    </a> 
 </body>
 </html>

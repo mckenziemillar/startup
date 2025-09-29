@@ -1,42 +1,26 @@
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Player</title>
-
-    <link rel="stylesheet" href="index_style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Music Player</title>
+    <link rel="stylesheet" href="login_style.css" />
 </head>
 
-</head>
 <body>
+
     <div class="nav-container">
-        <button class="nav-button">Logout</button>
-        <a href="index.html" class="nav-button">Swipe Deck</a>
-        <a href="playlist.html" class="nav-button">My Playlist</a>
-        <a href="trending.html" class="nav-button">Trending</a>
+      <a href="deck.html" class="nav-button">Home</a>
+      <a href="playlist.html" class="nav-button">My Playlist</a>
+      <a href="trending.html" class="nav-button">Trending</a>
     </div>
 
-    <div class="main-content">
-        <div class="album-container">
-            <div class="album-frame">
-                <img src="https://upload.wikimedia.org/wikipedia/en/4/42/Beatles_-_Abbey_Road.jpg" 
-                     alt="Abbey Road Album Cover" 
-                     class="album-art">
-            </div>
-        </div>
-
-        <div class="song-info">
-            <h2 class="song-title">Come Together</h2>
-            <h3 class="artist-name">The Beatles</h3>
-        </div>
-
-        <div class="controls">
-            <button class="control-button skip-button">← Skip</button>
-            <button class="control-button save-button">Save →</button>
-        </div>
+    <div class="login-container">
+      <h2 class="login-title">Welcome Back</h2>
+      <form class="login-form">
+        <input type="text" placeholder="Username" class="input-field" required />
+        <input type="password" placeholder="Password" class="input-field" required />
+        <button type="submit" class="login-button">Log In</button>
+      </form>
+      <p class="signup-text">Don’t have an account? <a href="#" class="signup-link">Sign Up</a></p>
     </div>
-
-    <a href="https://github.com/mckenziemillar/startup.git" class="github-link" target="_blank">
-        GitHub Repository
-    </a> 
-</body>
-</html>
+  </body>
+  </html>
