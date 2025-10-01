@@ -39,6 +39,12 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+.nav-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
 .current-user-box {
     margin-left: auto; /* pushes it to the far right */
     background: rgba(255, 255, 255, 0.1);
