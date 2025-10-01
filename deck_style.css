@@ -94,6 +94,13 @@ body {
     font-weight: 300;
 }
 
+.controls {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+
 .current-user-box {
     margin-left: auto; /* pushes it to the far right */
     background: rgba(255, 255, 255, 0.1);
