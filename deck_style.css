@@ -66,6 +66,13 @@ body {
     box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
 }
 
+.album-art {
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
+    display: block;
+}
+
 .current-user-box {
     margin-left: auto; /* pushes it to the far right */
     background: rgba(255, 255, 255, 0.1);
