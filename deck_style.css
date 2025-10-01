@@ -45,6 +45,15 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
 .current-user-box {
     margin-left: auto; /* pushes it to the far right */
     background: rgba(255, 255, 255, 0.1);
