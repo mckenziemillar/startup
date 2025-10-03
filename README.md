@@ -128,12 +128,12 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Header, footer, and main content body** - I did not complete this part of the deliverable.
-- [ ] **Navigation elements** - I did not complete this part of the deliverable.
-- [ ] **Responsive to window resizing** - I did not complete this part of the deliverable.
-- [ ] **Application elements** - I did not complete this part of the deliverable.
-- [ ] **Application text content** - I did not complete this part of the deliverable.
-- [ ] **Application images** - I did not complete this part of the deliverable.
+- [x] **Header, footer, and main content body** - I created a top navigation bar with styled buttons, a flexible main content area that adapts to screen size, and a footer with a blurred background and text.
+- [x] **Navigation elements** - I added navigation buttons that change appearance on hover and scale nicely for smaller screens.
+- [x] **Responsive to window resizing** - I used media queries to adjust the size of album art, font sizes, buttons, and layout for screens smaller than 768px.
+- [x] **Application elements** - I implemented album containers, song information boxes, and control buttons with hover and active effects.
+- [x] **Application text content** - I styled song titles, artist names, section headers, and user information with custom fonts, gradients, and spacing.
+- [x] **Application images** - I included album art and song thumbnails with borders, shadows, and responsive sizing.
 
 ## 🚀 React part 1: Routing deliverable
 
