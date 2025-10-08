@@ -139,9 +139,9 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Bundled using Vite** - I did not complete this part of the deliverable.
-- [ ] **Components** - I did not complete this part of the deliverable.
-- [ ] **Router** - I did not complete this part of the deliverable.
+- [x] **Bundled using Vite** - Installed and configured Vite with npm scripts for dev, build, and preview. Created proper directory structure with public/ for assets and src/ for React code.
+- [x] **Components** - Converted all HTML pages (login, play, scores, about) into React functional components. Moved CSS files into respective component directories and imported them. Created App component with header and footer.
+- [x] **Router** - Implemented React Router with BrowserRouter, Routes, and NavLink components. Configured routes for all four views (/, /play, /scores, /about) with a 404 NotFound handler for invalid paths.
 
 ## 🚀 React part 2: Reactivity deliverable
 
