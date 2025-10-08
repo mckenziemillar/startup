@@ -15,7 +15,7 @@
   }
   
   /* Top Navigation (copied style) */
-  .nav-container {
+  /*.nav-container {
     text-decoration: none;
     color: inherit;
     display: flex;
@@ -24,7 +24,7 @@
     padding: 20px 40px;
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
-  }
+  }*/
   
   .nav-button {
     text-decoration: none;
