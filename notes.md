@@ -74,26 +74,46 @@ Setting up Vite and React was pretty simple. I had a bit of trouble because of c
 
 ## React Part 2: Reactivity
 
-This was a lot of fun to see it all come together. I had to keep remembering to use React state instead of just manipulating the DOM directly.
+React Hooks
 
-Handling the toggling of the checkboxes was particularly interesting.
+useState lets you create variables that make the page re-render when they change
+useEffect runs code when the component loads (or unmounts for cleanup)
+About component - set up state for imageUrl/quote and initialized them in useEffect (even though they're hardcoded for now)
 
-```jsx
-<div className="input-group sound-button-container">
-  {calmSoundTypes.map((sound, index) => (
-    <div key={index} className="form-check form-switch">
-      <input
-        className="form-check-input"
-        type="checkbox"
-        value={sound}
-        id={sound}
-        onChange={() => togglePlay(sound)}
-        checked={selectedSounds.includes(sound)}
-      ></input>
-      <label className="form-check-label" htmlFor={sound}>
-        {sound}
-      </label>
-    </div>
-  ))}
-</div>
-```
+Managing State Between Components
+
+Lifting State Up - put shared state in the parent and pass functions down to update it
+authState lives in App, gets passed to Login with a callback to change it
+This way App knows when someone logs in and can show/hide nav items
+
+Breaking Things Into Components
+
+Made smaller components instead of one huge file
+Play has Players and SimonGame inside it
+SimonGame has the four SimonButton components
+Login shows either Authenticated or Unauthenticated based on if you're logged in
+Way easier to work with than all the code in one place
+
+Game Logic Stuff
+
+Used state for allowPlayer (stops you from clicking buttons too fast), sequence (pattern to match), and playbackPos (where you are in the sequence)
+Saved scores to localStorage so they stick around
+Generated the scores table by mapping over an array in JSX
+Had to use async/await for the button animations
+
+Routes and Authentication
+
+Only show Play and Scores links if you're logged in
+Checked authState to decide what to render
+
+Dev Environment
+
+DON'T use Live Server anymore - run npm run dev instead (Vite handles everything)
+deployReact.sh builds the app with Vite then copies it to the server
+Use browser devtools to debug frontend
+
+Preparing for Later
+
+gameNotifier has fake scores on a timer, will replace with real WebSocket messages
+Login will eventually talk to backend for real authentication
+About component ready for actual API calls to get random images/quotes
