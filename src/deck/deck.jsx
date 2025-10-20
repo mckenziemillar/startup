@@ -73,6 +73,18 @@ export function Deck() {
     handleSkip();
   }
 
+  if (!currentSong) {
+    return (
+      <div>
+        <h2 style={{textAlign: 'center', marginTop: '50px'}}>
+          No more songs! Start over?
+        </h2>
+        <button onClick={() => setCurrentSongIndex(0)}>Restart</button>
+      </div>
+    );
+  }
+
+
 
   return (
     <>
@@ -90,8 +102,8 @@ export function Deck() {
         <div className="album-container">
           <div className="album-frame">
             <img 
-              src="https://upload.wikimedia.org/wikipedia/en/4/42/Beatles_-_Abbey_Road.jpg" 
-              alt="Abbey Road Album Cover" 
+              src={currentSong.albumArt} 
+              alt={`${currentSong.title} Album Cover`} 
               className="album-art"
             />
           </div>
@@ -103,8 +115,8 @@ export function Deck() {
         </div>
 
         <div className="controls">
-          <button className="control-button skip-button">← Skip</button>
-          <button className="control-button save-button">Save →</button>
+          <button className="control-button skip-button" oncClick={handleSkip}>← Skip</button>
+          <button className="control-button save-button" oncClick={handleSave}>Save →</button>
         </div>
       </main>
     </>
