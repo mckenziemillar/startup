@@ -39,8 +39,7 @@ export function Login() {
         <form className="login-form">
           <input type="text" placeholder="Username" className="input-field" value={username}
             onChange={(e) => setUsername(e.target.value)} required />
-          <input type="password" placeholder="Password" className="input-field" value={password}
-            onChange={(e) => setPassword(e.target.value)} required />
+          {error && <p style={{color: 'red', fontSize: '14px'}}>{error}</p>}
           <button type="submit" className="login-button">Log In</button>
         </form>
         <p className="signup-text">Don't have an account? <a href="#" className="signup-link">Sign Up</a></p>
