@@ -31,6 +31,17 @@ const mockSongs = [
 
 export function Deck() {
   const navigate = useNavigate();
+  const [username, setUsername] = React.useState('Guest');
+  const [currentSongIndex, setCurrentSongIndex] = React.useState(0);
+  const [songs, setSongs] = React.useState(mockSongs);
+
+  React.useEffect(() => {
+    const savedUser = localStorage.getItem('username');
+    if (savedUser) {
+      setUsername(savedUser);
+    }
+  }, []);
+
 
   return (
     <>
