@@ -2,6 +2,33 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './deck.css';
 
+const mockSongs = [
+  {
+    id: 1,
+    title: "Come Together",
+    artist: "The Beatles",
+    albumArt: "https://upload.wikimedia.org/wikipedia/en/4/42/Beatles_-_Abbey_Road.jpg"
+  },
+  {
+    id: 2,
+    title: "Money",
+    artist: "Pink Floyd",
+    albumArt: "https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png"
+  },
+  {
+    id: 3,
+    title: "Bohemian Rhapsody",
+    artist: "Queen",
+    albumArt: "https://upload.wikimedia.org/wikipedia/en/4/4d/Queen_A_Night_at_the_Opera.png"
+  },
+  {
+    id: 4,
+    title: "Stairway to Heaven",
+    artist: "Led Zeppelin",
+    albumArt: "https://upload.wikimedia.org/wikipedia/en/2/26/Led_Zeppelin_-_Led_Zeppelin_IV.jpg"
+  }
+];
+
 export function Deck() {
   const navigate = useNavigate();
 
