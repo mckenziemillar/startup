@@ -42,6 +42,22 @@ export function Deck() {
     }
   }, []);
 
+  const currentSong = songs[currentSongIndex];
+
+  function handleLogout() {
+    localStorage.removeItem('username');
+    navigate('/');
+  }
+
+  function handleSkip() {
+    if (currentSongIndex < songs.length - 1) {
+      setCurrentSongIndex(currentSongIndex + 1);
+    } else {
+      // Loop back to start or show "no more songs" message
+      setCurrentSongIndex(0);
+    }
+  }
+
 
   return (
     <>
