@@ -4,6 +4,20 @@ import './login.css';
 
 export function Login() {
   const navigate = useNavigate();
+  const [username, setUsername] = React.useState('');
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    
+    if (!username || !password) {
+      setError('Please enter both username and password');
+      return;
+    }
+
+    // Store username in localStorage (mock authentication)
+    localStorage.setItem('username', username);
+    navigate('/deck');
+  }
 
   return (
     <>
