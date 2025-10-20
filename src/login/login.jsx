@@ -6,6 +6,13 @@ export function Login() {
   const navigate = useNavigate();
   const [username, setUsername] = React.useState('');
 
+  React.useEffect(() => {
+    const savedUser = localStorage.getItem('username');
+    if (savedUser) {
+      navigate('/deck');
+    }
+  }, [navigate]);
+
   function handleSubmit(event) {
     event.preventDefault();
     
