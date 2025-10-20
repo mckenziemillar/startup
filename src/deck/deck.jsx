@@ -58,6 +58,21 @@ export function Deck() {
     }
   }
 
+  function handleSave() {
+    // Save song to playlist in localStorage
+    const savedPlaylist = JSON.parse(localStorage.getItem('playlist') || '[]');
+    
+    // Check if song already exists
+    const exists = savedPlaylist.some(song => song.id === currentSong.id);
+    if (!exists) {
+      savedPlaylist.push(currentSong);
+      localStorage.setItem('playlist', JSON.stringify(savedPlaylist));
+    }
+
+    // Move to next song
+    handleSkip();
+  }
+
 
   return (
     <>
