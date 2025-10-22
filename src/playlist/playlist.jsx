@@ -4,6 +4,19 @@ import './playlist.css';
 
 export function Playlist() {
   const navigate = useNavigate();
+  const [username, setUsername] = React.useState('Guest');
+  const [playlist, setPlaylist] = React.useState([]);
+
+  // Load username and playlist from localStorage
+  React.useEffect(() => {
+    const savedUser = localStorage.getItem('username');
+    if (savedUser) {
+      setUsername(savedUser);
+    }
+
+    const savedPlaylist = JSON.parse(localStorage.getItem('playlist') || '[]');
+    setPlaylist(savedPlaylist);
+  }, []);
 
   return (
     <>
