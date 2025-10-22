@@ -89,7 +89,7 @@ export function Deck() {
   return (
     <>
       <div className="nav-container">
-        <button className="nav-button" onClick={() => navigate('/')}>Logout</button>
+        <button className="nav-button" onClick={handleLogout}>Logout</button>
         <button className="nav-button" onClick={() => navigate('/deck')}>Swipe Deck</button>
         <button className="nav-button" onClick={() => navigate('/playlist')}>My Playlist</button>
         <button className="nav-button" onClick={() => navigate('/trending')}>Trending</button>
