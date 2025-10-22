@@ -18,6 +18,17 @@ export function Playlist() {
     setPlaylist(savedPlaylist);
   }, []);
 
+  function handleLogout() {
+    localStorage.removeItem('username');
+    navigate('/');
+  }
+
+  function handleRemoveSong(songId) {
+    const updatedPlaylist = playlist.filter(song => song.id !== songId);
+    setPlaylist(updatedPlaylist);
+    localStorage.setItem('playlist', JSON.stringify(updatedPlaylist));
+  }
+
   return (
     <>
       <div className="nav-container">
