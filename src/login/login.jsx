@@ -30,15 +30,10 @@ export function Login() {
 
   return (
     <>
-      <div className="nav-container">
-        <button className="nav-button" onClick={() => navigate('/deck')}>Home</button>
-        <button className="nav-button" onClick={() => navigate('/playlist')}>My Playlist</button>
-        <button className="nav-button" onClick={() => navigate('/trending')}>Trending</button>
-      </div>
 
       <div className="login-container">
-        <h2 className="login-title">Welcome Back</h2>
-        <form className="login-form">
+        <h2 className="login-title">Welcome to SongSwipe</h2>
+        <form className="login-form" onSubmit={handleSubmit}>
           <input type="text" placeholder="Username" className="input-field" value={username}
             onChange={(e) => setUsername(e.target.value)} required />
           <input 
@@ -48,7 +43,14 @@ export function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required 
-          />  
+          />
+          <p style={{ 
+            color: 'rgba(255, 255, 255, 0.5)', 
+            marginTop: '10px',
+            fontSize: '14px'
+          }}>
+            Song {currentSongIndex + 1} of {songs.length}
+          </p>  
           <button type="submit" className="login-button">Log In</button>
         </form>
         <p className="signup-text">Don't have an account? <a href="#" className="signup-link">Sign Up</a></p>
