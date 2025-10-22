@@ -33,7 +33,7 @@ export function Deck() {
   const navigate = useNavigate();
   const [username, setUsername] = React.useState('Guest');
   const [currentSongIndex, setCurrentSongIndex] = React.useState(0);
-  const [songs, setSongs] = React.useState(mockSongs);
+  const [songs] = React.useState(mockSongs);
 
   React.useEffect(() => {
     const savedUser = localStorage.getItem('username');
@@ -123,18 +123,11 @@ export function Deck() {
         <div className="song-info">
           <h2 className="song-title">{currentSong.title}</h2>
           <h3 className="artist-name">{currentSong.artist}</h3>
-          <p style={{ 
-            color: 'rgba(255, 255, 255, 0.5)', 
-            marginTop: '10px',
-            fontSize: '14px'
-          }}>
-            Song {currentSongIndex + 1} of {songs.length}
-          </p>
         </div>
 
         <div className="controls">
-          <button className="control-button skip-button" oncClick={handleSkip}>← Skip</button>
-          <button className="control-button save-button" oncClick={handleSave}>Save →</button>
+          <button className="control-button skip-button" onClick={handleSkip} type="button">← Skip</button>
+          <button className="control-button save-button" onClick={handleSave} type="button">Save →</button>
         </div>
       </main>
     </>
