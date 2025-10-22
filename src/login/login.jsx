@@ -44,13 +44,7 @@ export function Login() {
             onChange={(e) => setPassword(e.target.value)}
             required 
           />
-          <p style={{ 
-            color: 'rgba(255, 255, 255, 0.5)', 
-            marginTop: '10px',
-            fontSize: '14px'
-          }}>
-            Song {currentSongIndex + 1} of {songs.length}
-          </p>  
+          {error && <p style={{color: 'red', fontSize: '14px', marginTop: '10px'}}>{error}</p>}
           <button type="submit" className="login-button">Log In</button>
         </form>
         <p className="signup-text">Don't have an account? <a href="#" className="signup-link">Sign Up</a></p>
