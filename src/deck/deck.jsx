@@ -39,10 +39,13 @@ export function Deck() {
     const savedUser = localStorage.getItem('username');
     if (savedUser) {
       setUsername(savedUser);
+    } else {
+      navigate('/');
     }
-  }, []);
+  }, [navigate]);
 
   const currentSong = songs[currentSongIndex];
+  const hasMoreSongs = currentSongIndex < songs.length - 1;
 
   function handleLogout() {
     localStorage.removeItem('username');
