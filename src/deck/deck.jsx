@@ -53,15 +53,16 @@ export function Deck() {
   }
 
   function handleSkip() {
-    if (currentSongIndex < songs.length - 1) {
-      setCurrentSongIndex(currentSongIndex + 1);
+    console.log('Skip button clicked!');
+    if (hasMoreSongs) {
+      setCurrentSongIndex(prev => prev + 1);
     } else {
-      // Loop back to start or show "no more songs" message
       setCurrentSongIndex(0);
     }
   }
 
   function handleSave() {
+    console.log('Save button clicked for:', currentSong.title);
     // Save song to playlist in localStorage
     const savedPlaylist = JSON.parse(localStorage.getItem('playlist') || '[]');
     
@@ -70,10 +71,17 @@ export function Deck() {
     if (!exists) {
       savedPlaylist.push(currentSong);
       localStorage.setItem('playlist', JSON.stringify(savedPlaylist));
+      console.log('Song saved to playlist!');
+    } else {
+      console.log('Song already in playlist');
     }
 
     // Move to next song
-    handleSkip();
+    if (hasMoreSongs) {
+      setCurrentSongIndex(prev => prev + 1);
+    } else {
+      setCurrentSongIndex(0);
+    }
   }
 
   if (!currentSong) {
@@ -97,7 +105,7 @@ export function Deck() {
         <button className="nav-button" onClick={() => navigate('/playlist')}>My Playlist</button>
         <button className="nav-button" onClick={() => navigate('/trending')}>Trending</button>
         <div className="current-user-box">
-          Logged in as <span className="username">Mckenzie</span>
+          Logged in as <span className="username">{username}</span>
         </div>
       </div>
 
@@ -113,8 +121,15 @@ export function Deck() {
         </div>
 
         <div className="song-info">
-          <h2 className="song-title">Come Together</h2>
-          <h3 className="artist-name">The Beatles</h3>
+          <h2 className="song-title">{currentSong.title}</h2>
+          <h3 className="artist-name">{currentSong.artist}</h3>
+          <p style={{ 
+            color: 'rgba(255, 255, 255, 0.5)', 
+            marginTop: '10px',
+            fontSize: '14px'
+          }}>
+            Song {currentSongIndex + 1} of {songs.length}
+          </p>
         </div>
 
         <div className="controls">
