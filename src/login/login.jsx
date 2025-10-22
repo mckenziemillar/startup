@@ -5,6 +5,8 @@ import './login.css';
 export function Login() {
   const navigate = useNavigate();
   const [username, setUsername] = React.useState('');
+  const [password, setPassword] = React.useState('');
+  const [error, setError] = React.useState('');
 
   React.useEffect(() => {
     const savedUser = localStorage.getItem('username');
