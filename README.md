@@ -147,8 +147,8 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **All functionality implemented or mocked out** - I did not complete this part of the deliverable.
-- [ ] **Hooks** - I did not complete this part of the deliverable.
+- [x] **All functionality implemented or mocked out** - All core functionality is working: login stores username, deck allows swiping/saving songs, playlist displays saved songs with remove functionality, and song progress persists. Trending page will be enhanced with WebSocket in future deliverable.
+- [x] **Hooks** - Used useState for managing username, currentSongIndex, playlist, and form inputs. Used useEffect to load data from localStorage on component mount, save song progress automatically, and set up cleanup. Used useNavigate hook for programmatic navigation between pages.
 
 ## 🚀 Service deliverable
 
