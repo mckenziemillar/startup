@@ -84,11 +84,16 @@ export function Deck() {
 
   if (!currentSong) {
     return (
-      <div>
-        <h2 style={{textAlign: 'center', marginTop: '50px'}}>
-          No more songs! Start over?
-        </h2>
-        <button onClick={() => setCurrentSongIndex(0)}>Restart</button>
+      <div style={{ 
+        textAlign: 'center', 
+        marginTop: '100px', 
+        color: 'white',
+        padding: '40px'
+      }}>
+        <h2>You've gone through all available songs!</h2>
+        <p style={{ marginTop: '20px', color: 'rgba(255, 255, 255, 0.7)' }}>
+          Check out your playlist to see what you saved.
+        </p>
       </div>
     );
   }
