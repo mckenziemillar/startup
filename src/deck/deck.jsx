@@ -19,7 +19,7 @@ const mockSongs = [
     id: 3,
     title: "Bohemian Rhapsody",
     artist: "Queen",
-    albumArt: "https://upload.wikimedia.org/wikipedia/en/4/4d/Queen_A_Night_at_the_Opera.png"
+    albumArt: "https://en.wikipedia.org/wiki/File:Queen_A_Night_At_The_Opera.png"
   },
   {
     id: 4,
@@ -80,11 +80,18 @@ export function Deck() {
     if (hasMoreSongs) {
       setCurrentSongIndex(prev => prev + 1);
     } else {
-      setCurrentSongIndex(0);
+      return (
+        <div>
+          <h2 style={{textAlign: 'center', marginTop: '50px'}}>
+            No more songs! Start over?
+          </h2>
+          <button onClick={() => setCurrentSongIndex(0)}>Restart</button>
+        </div>
+      );
     }
   }
 
-  if (!currentSong) {
+  /*if (!currentSong) {
     return (
       <div>
         <h2 style={{textAlign: 'center', marginTop: '50px'}}>
@@ -93,7 +100,7 @@ export function Deck() {
         <button onClick={() => setCurrentSongIndex(0)}>Restart</button>
       </div>
     );
-  }
+  }*/
 
 
 
