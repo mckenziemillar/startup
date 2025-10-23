@@ -57,6 +57,7 @@ export function Deck() {
 
   function handleLogout() {
     localStorage.removeItem('username');
+    localStorage.removeItem('songProgress');
     navigate('/');
   }
 
