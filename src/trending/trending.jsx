@@ -38,6 +38,11 @@ export function Trending() {
     }
   }, []);
 
+  function handleLogout() {
+    localStorage.removeItem('username');
+    navigate('/');
+  }
+
 
   return (
     <>
