@@ -28,6 +28,16 @@ const initialTrendingSongs = [
 
 export function Trending() {
   const navigate = useNavigate();
+  const [username, setUsername] = React.useState('Guest');
+  const [trendingSongs, setTrendingSongs] = React.useState(initialTrendingSongs);
+
+  React.useEffect(() => {
+    const savedUser = localStorage.getItem('username');
+    if (savedUser) {
+      setUsername(savedUser);
+    }
+  }, []);
+
 
   return (
     <>
