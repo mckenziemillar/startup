@@ -42,7 +42,15 @@ export function Deck() {
     } else {
       navigate('/');
     }
+    const savedProgress = localStorage.getItem('songProgress');
+      if (savedProgress) {
+        setCurrentSongIndex(parseInt(savedProgress));
+      }
   }, [navigate]);
+
+  React.useEffect(() => {
+    localStorage.setItem('songProgress', currentSongIndex.toString());
+  }, [currentSongIndex]);
 
   const currentSong = songs[currentSongIndex];
   const hasMoreSongs = currentSongIndex < songs.length - 1;
