@@ -85,7 +85,7 @@ export function Deck() {
     setCurrentSongIndex(prev => prev + 1);
   }
 
-  if (!currentSong) {
+  /*if (!currentSong) {
     return (
       <div style={{ 
         textAlign: 'center', 
@@ -99,7 +99,7 @@ export function Deck() {
         </p>
       </div>
     );
-  }
+  }*/
 
 
 
@@ -115,27 +115,43 @@ export function Deck() {
         </div>
       </div>
 
-      <main className="main-content">
-        <div className="album-container">
-          <div className="album-frame">
-            <img 
-              src={currentSong.albumArt} 
-              alt={`${currentSong.title} Album Cover`} 
-              className="album-art"
-            />
+      {!currentSong ? (
+      <div style={{ 
+        textAlign: 'center', 
+        marginTop: '100px', 
+        color: 'white',
+        padding: '40px',
+        flex: 1
+      }}>
+        <h2>You've gone through all available songs!</h2>
+        <p style={{ marginTop: '20px', color: 'rgba(255, 255, 255, 0.7)' }}>
+          Check out your playlist to see what you saved.
+        </p>
+      </div>
+      ) : (
+
+        <main className="main-content">
+          <div className="album-container">
+            <div className="album-frame">
+              <img 
+                src={currentSong.albumArt} 
+                alt={`${currentSong.title} Album Cover`} 
+                className="album-art"
+              />
+            </div>
           </div>
-        </div>
 
-        <div className="song-info">
-          <h2 className="song-title">{currentSong.title}</h2>
-          <h3 className="artist-name">{currentSong.artist}</h3>
-        </div>
+          <div className="song-info">
+            <h2 className="song-title">{currentSong.title}</h2>
+            <h3 className="artist-name">{currentSong.artist}</h3>
+          </div>
 
-        <div className="controls">
-          <button className="control-button skip-button" onClick={handleSkip} type="button">← Skip</button>
-          <button className="control-button save-button" onClick={handleSave} type="button">Save →</button>
-        </div>
-      </main>
+          <div className="controls">
+            <button className="control-button skip-button" onClick={handleSkip} type="button">← Skip</button>
+            <button className="control-button save-button" onClick={handleSave} type="button">Save →</button>
+          </div>
+        </main>
+      )}
     </>
   );
 }
