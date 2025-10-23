@@ -2,6 +2,30 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './trending.css';
 
+const initialTrendingSongs = [
+  {
+    id: 1,
+    title: "Come Together",
+    artist: "The Beatles",
+    albumArt: "https://upload.wikimedia.org/wikipedia/en/4/42/Beatles_-_Abbey_Road.jpg",
+    plays: 1250
+  },
+  {
+    id: 2,
+    title: "Money",
+    artist: "Pink Floyd",
+    albumArt: "https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png",
+    plays: 1100
+  },
+  {
+    id: 3,
+    title: "Bohemian Rhapsody",
+    artist: "Queen",
+    albumArt: "https://upload.wikimedia.org/wikipedia/en/4/4d/Queen_A_Night_at_the_Opera.png",
+    plays: 980
+  }
+];
+
 export function Trending() {
   const navigate = useNavigate();
 
