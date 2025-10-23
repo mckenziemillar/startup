@@ -85,6 +85,13 @@ export function Trending() {
           </div>
         ))}
       </div>
+      <div style={{
+        textAlign: 'center',
+        marginTop: '20px',
+        color: 'rgba(255, 255, 255, 0.5)',
+        fontSize: '14px'
+      }}>
+      </div>
     </>
   );
 }
