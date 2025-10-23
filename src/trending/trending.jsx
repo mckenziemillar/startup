@@ -38,6 +38,23 @@ export function Trending() {
     }
   }, []);
 
+  //simulates websocket updates
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setTrendingSongs(prevSongs => {
+        const updatedSongs = prevSongs.map(song => ({
+          ...song,
+          plays: song.plays + Math.floor(Math.random() * 10)
+        }));
+        
+        // Sort by plays (highest first)
+        return updatedSongs.sort((a, b) => b.plays - a.plays);
+      });
+    }, 3000); // Update every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   function handleLogout() {
     localStorage.removeItem('username');
     navigate('/');

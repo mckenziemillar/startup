@@ -19,7 +19,7 @@ const mockSongs = [
     id: 3,
     title: "Bohemian Rhapsody",
     artist: "Queen",
-    albumArt: "https://en.wikipedia.org/wiki/File:Queen_A_Night_At_The_Opera.png"
+    albumArt: "https://upload.wikimedia.org/wikipedia/en/4/4d/Queen_A_Night_At_The_Opera.png"
   },
   {
     id: 4,
