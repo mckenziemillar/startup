@@ -54,11 +54,12 @@ export function Deck() {
 
   function handleSkip() {
     console.log('Skip button clicked!');
-    if (hasMoreSongs) {
+    /*if (hasMoreSongs) {
       setCurrentSongIndex(prev => prev + 1);
     } else {
       setCurrentSongIndex(0);
-    }
+    }*/
+    setCurrentSongIndex(prev => prev + 1);
   }
 
   function handleSave() {
@@ -77,9 +78,11 @@ export function Deck() {
     }
 
     // Move to next song
-    if (hasMoreSongs) {
+    /*if (hasMoreSongs) {
       setCurrentSongIndex(prev => prev + 1);
-    }
+    }*/
+
+    setCurrentSongIndex(prev => prev + 1);
   }
 
   if (!currentSong) {
